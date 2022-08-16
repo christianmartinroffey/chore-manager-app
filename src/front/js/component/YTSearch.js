@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import YTSearch from "youtube-api-search";
 
-const API_KEY = process.env.YT_API_KEY;
+// const API_KEY = process.env.YT_API_KEY;
+const API_KEY=AIzaSyDquSMfF13Mx-riIxO8nzpZuNxakp5WKuw;
 
 const VideoSearch = () => {
   const [videoID, setVideoID] = useState("");
