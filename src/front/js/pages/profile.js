@@ -41,7 +41,7 @@ function Profile() {
 
     <div className="body">
       <div className="name-and-date text-end p-2">
-        <h5 className="welcome">Welcome back, {store.email}!</h5>
+        <h5 className="welcome">{ !store.choreList || store.choreList.length === 0 ? `Welcome ${store.email}` : `Welcome back, ${store.email}`}</h5>
         <h6 className="date"> Today is the {today}</h6>
       </div>
       <div className="row justify-content-md-center">
