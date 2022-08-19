@@ -18,6 +18,7 @@ export const Navbar = ({ excludeFromHome = true }) => {
   const initScrollBehaviour = () => {
     let y = window.scrollY;
     setScrolled(y);
+    console.log(y, "scrolled");
   };
 
   useEffect(() => {
@@ -42,7 +43,7 @@ export const Navbar = ({ excludeFromHome = true }) => {
           {/* <span className="navbar-brand mb-0 h1" id="logo">Chore Manager</span> */}
           {/* <img src={logo3} className="navbar-logo" alt="logo3"/> */}
           <p className="nav-link navbar-brand logo">
-            <img className="nav-bar-logo" src={cleaninglogo}></img>
+            <img className="nav-bar-logo logo" src={cleaninglogo}></img>
            Chore Manager
           </p>
         </Link>

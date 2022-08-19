@@ -99,30 +99,30 @@ export const MetricsData = () => {
         </div>
       </div>
       <div className="row justify-content-md-center">
-        <div className="col-md-auto mt-3">
+        <div className="col-7 mt-3">
           <div className="row m-2">
             <div class="card m-2">
               <div class="card-body">
                 <div className="row text-center">
                   <div className="col-3">
                     {" "}
-                    <div class="dishes">
-                      Dishes<span className="numbers">{dishes}</span>
+                    <div class="dishes ">
+                      Dishes <span className="numbers">{dishes}</span>
                     </div>
                   </div>
                   <div className="col-3">
-                    <div class="laundry">
-                      Laundry<span className="numbers">{laundry}</span>
+                    <div class="laundry ">
+                      Laundry <span className="numbers">{laundry}</span>
                     </div>
                   </div>
                   <div className="col-3">
-                    <div class="cleaning">
-                      Cleaning<span className="numbers">{cleaning}</span>
+                    <div class="cleaning ">
+                      Cleaning <span className="numbers">{cleaning}</span>
                     </div>
                   </div>
                   <div className="col-3">
-                    <div class="shopping">
-                      Shopping<span className="numbers">{shopping}</span>
+                    <div class="shopping ">
+                      Shopping <span className="numbers">{shopping}</span>
                     </div>
                   </div>{" "}
                 </div>
@@ -160,7 +160,7 @@ export const MetricsData = () => {
           </div>
         </div>
 
-        <div className="col-6 mt-4">
+        <div className="col-5 mt-4">
           <div class="row">
             <div className="col card m-2 p-3">
               <Doughnut
