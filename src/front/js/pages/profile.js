@@ -6,6 +6,7 @@ import "../../styles/modules/dashboard.css";
 import { TeamMetrics } from "../component/teamMetrics";
 import AddToTeam from "../component/AddToTeam";
 import { Link } from "react-router-dom";
+import InspoQuote from "../component/inspoQuote";
 
 
 function Profile() {
@@ -43,7 +44,9 @@ function Profile() {
         <h5 className="welcome">Welcome back, {store.email}!</h5>
         <h6 className="date"> Today is the {today}</h6>
       </div>
-
+      <div className="row justify-content-md-center">
+        <InspoQuote></InspoQuote>
+      </div>
       <div className="card m-5">
         <div className="single-metrics">
           <h4 className="metrics-title text-center m-5">YOUR SINGLE METRICS</h4>
