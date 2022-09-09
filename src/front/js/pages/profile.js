@@ -17,6 +17,7 @@ function Profile() {
   useEffect(() => {
 
     actions.getChoresByUserEmail(store.email);
+    actions.setEmail();
 
     if (store.email) {
       actions.getTeamByUserEmail(store.email);

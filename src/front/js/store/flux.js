@@ -78,8 +78,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       // functionality to log out / remove token
       logout: () => {
         localStorage.removeItem("token");
+        localStorage.removeItem("email");
         console.log("log out triggered");
-        setStore({ token: null, team: null, username: null });
+        setStore({ token: null, team: null, username: null, email: null });
         localStorage.removeItem("team");
       },
 
@@ -109,6 +110,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await resp.json();
           console.log("this came from the backend", data);
           localStorage.setItem("token", data.access_token);
+          localStorage.setItem("email", data.email);
+          console.log(data.email, "email from backend");
 
           setStore({
             token: data.access_token,
@@ -123,7 +126,12 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("there's an error logging in ");
         }
       },
-
+// making sure that enail is always set in the store when accessing the dashboard
+      setEmail: () => {
+       const email = localStorage.getItem("email");
+        console.log("getemail triggers", email);
+        setStore({ email: email });
+      },
       // checking logged in token and access to a restricted page
 
       checkIfAuthorized: async () => {

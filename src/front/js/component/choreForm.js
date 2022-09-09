@@ -2,16 +2,23 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 
 export const AddChoreForm = () => {
-  const { actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
   const [chore, setChore] = useState();
   const [date, setDate] = useState();
   const [duration, setDuration] = useState();
 
   function addChore() {
+    actions.setEmail();
     if (chore && date && duration) {
       actions.setChoreList(chore, date, duration);
     }
   }
+
+
+
+  // useEffect(() => {
+  //   actions.setEmail();
+  // });
 
   return (
     <form className="add-a-chore">
