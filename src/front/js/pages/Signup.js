@@ -20,6 +20,7 @@ function Signup() {
   // onclick handler to submit info to backend
   const handleClick = () => {
     actions.createNewUser(email, username, password);
+    actions.setEmail();
   };
 
   //email verification

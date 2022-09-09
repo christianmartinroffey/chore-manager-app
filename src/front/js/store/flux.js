@@ -53,6 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("this came from the backend", data);
           // need to set up local storage function
           localStorage.setItem("token", data.access_token);
+          localStorage.setItem("email", email);
 
           setStore({
             token: data.access_token,
