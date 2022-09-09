@@ -273,6 +273,7 @@ def deleteUserFromTeam():
 def getChoresfromUsersInTeam():
 
     team = request.args.get("team", None)
+   
     users = UsersInTeam.get_user_ids_by_team(team.replace("%20", " "))
     if not users:
         return jsonify({"msg": "there are no users for the team"}), 404
@@ -284,11 +285,11 @@ def getChoresfromUsersInTeam():
             return jsonify({"msg": "there were no chores found for this user", "user": user.serialize()}), 404
         user_name = User.query.filter_by(id=user.user_id).one_or_none()
 
-    for chore in chores:
+        for chore in chores:
             serialized_chore = chore.serialize()
             serialized_chore["user_name"] = user_name.email
             serialized_chores.append(serialized_chore)
-        
+    
     return jsonify({"teamChores" : serialized_chores})
 
 #### -- need to modify  this to the BACKEND URL os.environ['GMAIL_USERNAME']

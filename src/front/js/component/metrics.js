@@ -122,7 +122,7 @@ export const MetricsData = () => {
                   </div>
                   <div className="col-3">
                     <div class="shopping ">
-                      Shopping <span className="numbers">{shopping}</span>
+                      Shopping <span className="numbers">{shopping}0</span>
                     </div>
                   </div>{" "}
                 </div>

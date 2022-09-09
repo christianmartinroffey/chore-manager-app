@@ -84,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       // creating the login functionality - needs to verify if user exists in DB and generate access token
-      login: async ( identifier, password) => {
+      login: async (identifier, password) => {
         const opts = {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -194,7 +194,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             duration: duration + ":00",
           }),
         };
-
+        console.log(store.email);
         try {
           const resp = await fetch(
             process.env.BACKEND_URL + "/api/chore" + `?email=${store.email}`,
@@ -405,8 +405,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         try {
           const resp = await fetch(
-            
-            process.env.BACKEND_URL + "/api/forgot-password" + `?email=${email}`,
+            process.env.BACKEND_URL +
+              "/api/forgot-password" +
+              `?email=${email}`,
             opts
           );
 
@@ -416,14 +417,16 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      // 
+      //
       resetPasswordRequest: async (password, token) => {
         const opts = {
           method: "POST",
-          headers: { "Content-Type": "application/json", 
-          Authorization: "Bearer " + token},
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
           body: JSON.stringify({
-           password: password
+            password: password,
           }),
         };
         console.log(token);
@@ -431,10 +434,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         try {
           const resp = await fetch(
             process.env.BACKEND_URL + "/api/reset-password",
-            
+
             opts
           );
-           
+
           return true;
         } catch (error) {
           console.log("error resetting the password");
@@ -445,24 +448,26 @@ const getState = ({ getStore, getActions, setStore }) => {
       sendEmail: async () => {
         const opts = {
           method: "POST",
-          headers: { "Content-Type": "application/json", 'Access-Control-Allow-Origin': '*'},
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
           body: JSON.stringify(),
         };
 
         try {
           const resp = await fetch(
             process.env.BACKEND_URL + "/api/send-email-test",
-            
+
             opts
           );
-          console.log("email sent")
-           
+          console.log("email sent");
+
           return true;
         } catch (error) {
           console.log("can't send email");
         }
       },
-
     },
   };
 };
