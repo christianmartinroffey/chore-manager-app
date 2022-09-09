@@ -24,7 +24,7 @@ function Profile() {
 
   }, [store.email /*store.choreList*/]);
 
-  console.log("username", store.username, store.email);
+  console.log("username", store.username, "email", store.email);
 
   //redirect to the /login page if there is no token present
   if (!token || token == "" || token == undefined) navigate("/login");
