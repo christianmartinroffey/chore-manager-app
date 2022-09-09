@@ -1,10 +1,18 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
+import { Context } from "../store/appContext";
 import { AddChoreForm } from "../component/choreForm";
 import { HistoryofChores } from "../component/historyofChores";
 import VideoSearch from "../component/YTSearch";
 import InspoQuote from "../component/inspoQuote";
 
 export const History = () => {
+
+  const { store, actions } = useContext(Context);
+
+  // useEffect(() => {
+  //   actions.setEmail();
+  // });
+  
   return (
     <>
       <h1 className="text-center">Add a Chore</h1>
