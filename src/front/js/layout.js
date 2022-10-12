@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/profile";
 import { Single } from "./pages/single";
 import { History } from "./pages/history";
-
+import Stopwatch  from "../js/component/stopwatch.js";
 import { TeamMetricsPage } from "./pages/teamMetrics";
 
 import  ForgotPassword from "./pages/ForgotPassword.js";
@@ -47,6 +47,7 @@ const Layout = () => {
             <Route element={<SendEmail/>} path="/send-email" />
             <Route element={<ResetPasswordConfirmation/>} path="/pw-reset-confirmation" />
             <Route element={<h1>Not found!</h1>} />
+            <Route element={<Stopwatch />} path="/stopwatch" />
           </Routes>
           <Footer />
         </ScrollToTop>
