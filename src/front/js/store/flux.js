@@ -24,8 +24,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       testeList: [],
       quote: [],
+      duration:[],
     },
     actions: {
+
       // Use getActions to call a function within a fuction
       createNewUser: async (email, username, password) => {
         const opts = {
@@ -160,7 +162,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("Error loading message from backend", error);
         }
       },
+//getting duration from choreform component and setting to store
+      setDuration: (duration) => {
+        console.log("setduration triggered", duration);
+        setStore({ duration: duration });
+      },
 
+//
       setChoreList: (chore, date, duration) => {
         const store = getStore();
         let new_chores = store.choreList;
